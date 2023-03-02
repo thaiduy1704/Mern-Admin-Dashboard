@@ -3,13 +3,7 @@ import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./assets/theme";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { Dashboard, Layout } from "./pages/index";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const mode = useSelector((state) => state.theme.mode);
@@ -17,17 +11,11 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
+      <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
         </ThemeProvider>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
-        </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

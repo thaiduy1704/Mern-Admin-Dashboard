@@ -9,7 +9,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Dashboard, Layout } from "./pages/index";
 
 function App() {
   const mode = useSelector((state) => state.theme.mode);

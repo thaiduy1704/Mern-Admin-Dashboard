@@ -9,7 +9,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Dashboard, Layout } from "./pages/index";
 
 function App() {
   const mode = useSelector((state) => state.theme.mode);
@@ -24,7 +23,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path ='/dashboard' element= {<Dashboard/>}
           </Route>
         </Routes>
       </Router>
