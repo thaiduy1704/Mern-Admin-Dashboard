@@ -1,0 +1,1 @@
+1. In Navbar Component not enable Hover 
