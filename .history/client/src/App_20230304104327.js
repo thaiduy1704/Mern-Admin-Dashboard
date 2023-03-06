@@ -30,7 +30,6 @@ function App() {
           </Routes>
         </ThemeProvider>
       </Router>
-    </div>
   );
 }
 

@@ -47,7 +47,11 @@ const Navbar = ({ isSideBarOpen, setIsSideBarOpen }) => {
               setIsSideBarOpen(!isSideBarOpen);
             }}
           >
-            <MenuIcon />
+            <MenuIcon
+              sx={{
+                marginRight: "1rem",
+              }}
+            />
           </IconButton>
           <FlexBetween
             backgroundColor={theme.palette.background.alt}

@@ -25,7 +25,7 @@ import {
 } from "@mui/material";
 import { tokensDark } from "assets/theme";
 
-const Navbar = ({ isSideBarOpen, setIsSideBarOpen }) => {
+const Navbar = () => {
   const dispatch = useDispatch();
 
   const theme = useTheme();
@@ -44,10 +44,14 @@ const Navbar = ({ isSideBarOpen, setIsSideBarOpen }) => {
           <IconButton
             sx={{ borderRadius: "none" }}
             onClick={() => {
-              setIsSideBarOpen(!isSideBarOpen);
+              console.log("open/close sidebar");
             }}
           >
-            <MenuIcon />
+            <MenuIcon
+              sx={{
+                marginRight: "1rem",
+              }}
+            />
           </IconButton>
           <FlexBetween
             backgroundColor={theme.palette.background.alt}

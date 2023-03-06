@@ -11,18 +11,10 @@ const Layout = () => {
 
   return (
     <Box display={isNonMobile ? "flex" : "block "} width="100%" height="100%">
-      <SideBar
-        isNonMobile={isNonMobile}
-        drawerWidth="250px"
-        isSideBarOpen={isSideBarOpen}
-        setIsSideBarOpen={setIsSideBarOpen}
-      />
+      <SideBar isNonMobile={isNonMobile} drawerWidth="250px" />
 
       <Box>
-        <Navbar
-          isSideBarOpen={isSideBarOpen}
-          setIsSideBarOpen={setIsSideBarOpen}
-        />
+        <Navbar />
         <Outlet />
       </Box>
     </Box>

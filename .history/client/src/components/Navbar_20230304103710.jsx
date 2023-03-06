@@ -25,10 +25,11 @@ import {
 } from "@mui/material";
 import { tokensDark } from "assets/theme";
 
-const Navbar = ({ isSideBarOpen, setIsSideBarOpen }) => {
+const Navbar = () => {
   const dispatch = useDispatch();
-
+  const { mode } = useSelector((store) => store.theme);
   const theme = useTheme();
+  console.log("Navbar theme", theme);
 
   return (
     <AppBar
@@ -44,28 +45,36 @@ const Navbar = ({ isSideBarOpen, setIsSideBarOpen }) => {
           <IconButton
             sx={{ borderRadius: "none" }}
             onClick={() => {
-              setIsSideBarOpen(!isSideBarOpen);
+              console.log("open/close sidebar");
             }}
           >
-            <MenuIcon />
+            <MenuIcon
+              sx={{
+                marginRight: "1rem",
+              }}
+            />
+            <FlexBetween
+              backgroundColor={
+                theme.palette.mode === "dark"
+                  ? tokensDark.primary[500]
+                  : tokensDark.grey[50]
+              }
+              borderRadius="9px"
+              gap="3rem"
+              p="0.1rem 1.5rem"
+            >
+              <InputBase placeholder="Search..." color="white" />
+              <IconButton>
+                <Search />
+              </IconButton>
+            </FlexBetween>
           </IconButton>
-          <FlexBetween
-            backgroundColor={theme.palette.background.alt}
-            borderRadius="9px"
-            gap="3rem"
-            p="0.1rem 1.5rem"
-          >
-            <InputBase placeholder="Search..." />
-            <IconButton>
-              <Search />
-            </IconButton>
-          </FlexBetween>
         </FlexBetween>
 
         {/* Right Side */}
         <FlexBetween gap="1.5rem">
           <IconButton onClick={() => dispatch(setMode())}>
-            {theme.palette.mode === "dark" ? (
+            {mode === "dark" ? (
               <DarkModeOutlined sx={{ fontSize: "25px" }} />
             ) : (
               <LightModeOutlined sx={{ fontSize: "25px" }} />
