@@ -37,7 +37,7 @@ const SideBar = ({
   drawerWidth,
   isSideBarOpen,
   setIsSideBarOpen,
-  isNonMoblie,
+  isNonMobile,
 }) => {
   const { pathname } = useLocation();
   return <div>SideBar</div>;

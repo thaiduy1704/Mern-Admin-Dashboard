@@ -37,7 +37,7 @@ const SideBar = ({
   drawerWidth,
   isSideBarOpen,
   setIsSideBarOpen,
-  isNonMoblie,
+  isNonMobile,
 }) => {
   return <div>SideBar</div>;
 };
