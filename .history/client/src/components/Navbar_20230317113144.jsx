@@ -125,14 +125,6 @@ const Navbar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
                 }}
               />
             </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={isOpen}
-              onClose={handleClose}
-              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-            >
-              <MenuItem onClick={handleClose}>Log out</MenuItem>
-            </Menu>
           </FlexBetween>
         </FlexBetween>
       </Toolbar>

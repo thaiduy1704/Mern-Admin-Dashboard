@@ -26,7 +26,7 @@ import {
 import { tokensDark } from "assets/theme";
 import { current } from "@reduxjs/toolkit";
 
-const Navbar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
+const Navbar = ({ isSideBarOpen, setIsSideBarOpen }) => {
   const dispatch = useDispatch();
 
   const theme = useTheme();
@@ -98,41 +98,33 @@ const Navbar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
                 component="img"
                 alt="profile"
                 src={profileImage}
-                height="32px"
-                width="32px"
+                height="40px"
+                width="40px"
                 borderRadius="50%"
                 sx={{ objectFit: "cover" }}
               />
               <Box textAlign="left">
                 <Typography
                   fontWeight="bold"
-                  fontSize="0.85rem"
+                  fontSize="0.9rem"
                   sx={{ color: theme.palette.secondary[100] }}
                 >
                   {user.name}
                 </Typography>
                 <Typography
-                  fontSize="0.75rem"
+                  fontSize="0.8rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
                   {user.occupation}
                 </Typography>
               </Box>
-              <ArrowDropDownOutlined
+              <SettingsOutlined
                 sx={{
                   color: theme.palette.secondary[300],
-                  fontSize: "25px",
+                  fontSize: "25px ",
                 }}
               />
             </Button>
-            <Menu
-              anchorEl={anchorEl}
-              open={isOpen}
-              onClose={handleClose}
-              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-            >
-              <MenuItem onClick={handleClose}>Log out</MenuItem>
-            </Menu>
           </FlexBetween>
         </FlexBetween>
       </Toolbar>
