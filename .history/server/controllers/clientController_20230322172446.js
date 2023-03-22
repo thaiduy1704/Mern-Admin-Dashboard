@@ -27,14 +27,7 @@ const getProduct = async (req, res) => {
 };
 const getCustomers = async (req, res) => {
   try {
-    const data = await User.find({ role: "user" }).select("-password");
-    if (data) {
-      successCode(res, data);
-    } else {
-      errorCode(res, "Not find User");
-    }
-  } catch (error) {
-    failCode(res);
-  }
+    const data = await User.find({ role: "user" }).select;
+  } catch (error) {}
 };
 export { getProduct, getCustomers };

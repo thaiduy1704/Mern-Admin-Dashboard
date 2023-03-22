@@ -27,7 +27,7 @@ const getProduct = async (req, res) => {
 };
 const getCustomers = async (req, res) => {
   try {
-    const data = await User.find({ role: "user" }).select("-password");
+    const data = await User.find({ role: "user" });
     if (data) {
       successCode(res, data);
     } else {

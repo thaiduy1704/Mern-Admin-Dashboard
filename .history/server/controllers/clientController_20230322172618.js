@@ -31,7 +31,7 @@ const getCustomers = async (req, res) => {
     if (data) {
       successCode(res, data);
     } else {
-      errorCode(res, "Not find User");
+      errorCode(res);
     }
   } catch (error) {
     failCode(res);

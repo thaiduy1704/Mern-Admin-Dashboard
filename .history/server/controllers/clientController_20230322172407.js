@@ -1,7 +1,8 @@
 import { successCode, failCode, errorCode } from "../utils/response.js";
 import Product from "../models/Product.js";
 import ProductStat from "../models/ProductStat.js";
-import User from "../models/User.js";
+import second from '../models/User.js'
+
 const getProduct = async (req, res) => {
   try {
     const products = await Product.find();
@@ -27,14 +28,14 @@ const getProduct = async (req, res) => {
 };
 const getCustomers = async (req, res) => {
   try {
-    const data = await User.find({ role: "user" }).select("-password");
-    if (data) {
-      successCode(res, data);
-    } else {
-      errorCode(res, "Not find User");
-    }
-  } catch (error) {
-    failCode(res);
-  }
+    const data = await User.find({ role: "user" }).<div class="form-group">
+      <label for=""></label>
+      <select class="form-control form-control-sm" name="" id="">
+        <option></option>
+        <option></option>
+        <option></option>
+      </select>
+    </div>;
+  } catch (error) {}
 };
 export { getProduct, getCustomers };

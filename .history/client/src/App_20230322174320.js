@@ -9,7 +9,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Dashboard, Layout, Product, Customers } from "./pages/index";
+import { Dashboard, Layout, Product } from "./pages/index";
 
 function App() {
   const { mode } = useSelector((store) => store.theme);

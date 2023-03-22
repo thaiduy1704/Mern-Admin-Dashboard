@@ -9,7 +9,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Dashboard, Layout, Product, Customers } from "./pages/index";
+import { Dashboard, Layout, Product } from "./pages/index";
 
 function App() {
   const { mode } = useSelector((store) => store.theme);
@@ -26,7 +26,7 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Product />} />
-              <Route path="/customers" element={<Customers />} />
+              <Route path="/customers" element={<Product />} />
             </Route>
           </Routes>
         </ThemeProvider>
